@@ -32,8 +32,6 @@ Prāna-fy (also known as **VitaSnap**) is a modern, mobile-first wellness app de
 ## 📁 Folder Structure
 
 ```
-bash
-CopyEdit
 pranaf/
 ├── assets/             # App assets: images, fonts, icons
 ├── components/         # Reusable UI components
@@ -63,8 +61,6 @@ pranaf/
 ### 2. Clone & Install
 
 ```bash
-bash
-CopyEdit
 git clone https://github.com/your-username/pranaf.git
 cd pranaf
 npm install
@@ -84,8 +80,7 @@ npm install
 - Copy your Firebase config to `services/firebase.js`.
 
 ```
-js
-CopyEdit
+
 // services/firebase.js
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
@@ -114,8 +109,6 @@ export const db = getFirestore(app);
 - Create a `.env` file:
 
 ```
-ini
-CopyEdit
 OPENAI_API_KEY=sk-...
 
 ```
@@ -123,8 +116,6 @@ OPENAI_API_KEY=sk-...
 - Create wrapper function in `services/openai.js`:
 
 ```
-js
-CopyEdit
 import { config } from "dotenv";
 config();
 
@@ -158,8 +149,6 @@ export const fetchSuggestionFromOpenAI = async (prompt) => {
 If OpenAI fails, we use offline AI:
 
 ```
-js
-CopyEdit
 // utils/localAI.js
 export const generateLocalSuggestion = ({ mood, symptom }) => {
   if (mood === "tired" && symptom === "headache") {
@@ -173,8 +162,6 @@ export const generateLocalSuggestion = ({ mood, symptom }) => {
 Use in your main suggestion engine:
 
 ```
-js
-CopyEdit
 import { fetchSuggestionFromOpenAI } from "../services/openai";
 import { generateLocalSuggestion } from "../utils/localAI";
 
@@ -191,8 +178,6 @@ export const getSmartSuggestion = async (input) => {
 ### 6. Run the App
 
 ```bash
-bash
-CopyEdit
 npx expo start
 
 ```
